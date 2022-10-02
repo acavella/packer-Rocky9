@@ -13,7 +13,7 @@
     "builders": [
       {
         "type": "vmware-iso",
-        "boot_command": ["e<down><down><end><bs><bs><bs><bs><bs>text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<leftCtrlOn>x<leftCtrlOff>"],
+        "boot_command": ["e<down><down><end><bs><bs><bs><bs><bs>text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<leftCtrlOn>x<leftCtrlOff>"],
         "boot_wait": "{{ user `boot_wait` }}",
         "disk_size": "{{ user `disk_size` }}",
         "disk_type_id": "0",
@@ -37,7 +37,7 @@
       },
       {
         "type": "virtualbox-iso",
-        "boot_command": ["e<down><down><end><bs><bs><bs><bs><bs>text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<leftCtrlOn>x<leftCtrlOff>"],
+        "boot_command": ["e<down><down><end><bs><bs><bs><bs><bs>text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<leftCtrlOn>x<leftCtrlOff>"],
         "boot_wait": "{{ user `boot_wait` }}",
         "disk_size": "{{ user `disk_size` }}",
         "guest_os_type": "RedHat_64",
