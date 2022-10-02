@@ -4,17 +4,18 @@
       "disk_size": "40960",
       "iso_checksum": "fc6b306b9fc8d327d7545373ce88c48bd1f7e84d29548814a91e84676b7d26e4",
       "iso_url": "https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.0-x86_64-boot.iso",
-      "memsize": "1024",
-      "numvcpus": "1",
+      "memsize": "2048",
+      "numvcpus": "2",
       "ssh_password" : "packer",
       "ssh_username" : "packer",
-      "vm_name": "Rocky-8.6-x86_64"
+      "vm_name": "Rocky-9-x86_64"
     },
     "builders": [
       {
         "type": "vmware-iso",
         "boot_command": [
           "<tab><bs><bs><bs><bs><bs>text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+          <up><tab> text ip=192.168.1.11::192.168.1.254:255.255.255.0:template:ens192:none nameserver=192.168.1.254 inst.ks=http://{{ user `HTTP_IP` }}/{{ user `HTTP_PATH` }}<enter><wait><enter>
         ],
         "boot_wait": "{{ user `boot_wait` }}",
         "disk_size": "{{ user `disk_size` }}",
