@@ -14,7 +14,7 @@
       {
         "type": "vmware-iso",
         "boot_command": [
-          "<tab><bs><bs><bs><bs><bs>text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+          "<tab><bs><bs><bs><bs><bs>inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
         ],
         "boot_wait": "{{ user `boot_wait` }}",
         "disk_size": "{{ user `disk_size` }}",
@@ -39,7 +39,7 @@
       {
         "type": "virtualbox-iso",
         "boot_command": [
-          "<tab><bs><bs><bs><bs><bs>text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+          "<tab><bs><bs><bs><bs><bs>inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
         ],
         "boot_wait": "{{ user `boot_wait` }}",
         "disk_size": "{{ user `disk_size` }}",
